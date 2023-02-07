@@ -3,7 +3,8 @@
 // либо задать на старте выполнения алгоритма. При решении не рекомендуется пользоваться коллекциями, лучше обойтись
 // исключительно массивами.
 
-string[] FilterArray(string[] array)
+string[] myArray = {"hello", "2", "world", ":-)", "98754", "643", "-5"};
+string[] FirstArray(string[] array)
 {
     int count = 0;
     for (int i = 0; i < array.Length; i++)
@@ -13,17 +14,17 @@ string[] FilterArray(string[] array)
             count++;
         }
     }
-    string[] newArray = new string[count];
+    string[] NewArray = new string[count];
     int j = 0;
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i].Length <= 3)
         {
-            newArray[j] = array[i];
+            NewArray[j] = array[i];
             j++;
         }
     }
-    return newArray;
+    return NewArray;
 }
 
 void PrintArray(string[] array)
@@ -35,5 +36,4 @@ void PrintArray(string[] array)
     }
     Console.Write($"{array[array.Length - 1]}]");
 }
-string[] myArray = {"hello", "2", "world", ":-)", "1234", "123", "-2"};
-PrintArray(FilterArray(myArray));
+PrintArray(FirstArray(myArray));
